@@ -5,6 +5,7 @@ import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './users/user.entity';
+import { Role } from './role/role.entity';
 import { RoleModule } from './role/role.module';
 
 @Module({
@@ -18,8 +19,8 @@ import { RoleModule } from './role/role.module';
       username: 'postgres',
       password: 'postgres',
       database: 'moometrics',
-      entities: [User],
-      synchronize: true,
+      entities: [User, Role],
+      synchronize: false, // Usar migraciones en lugar de sincronización automática
   }),
     RoleModule],
   controllers: [AppController],
