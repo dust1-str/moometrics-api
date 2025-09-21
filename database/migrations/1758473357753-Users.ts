@@ -10,8 +10,6 @@ export class Users1758473357753 implements MigrationInterface {
                 "email" character varying NOT NULL UNIQUE,
                 "password" character varying NOT NULL,
                 "role_id" integer NOT NULL,
-                "createdAt" TIMESTAMP NOT NULL DEFAULT now(),
-                "updatedAt" TIMESTAMP NOT NULL DEFAULT now(),
                 CONSTRAINT "PK_user_id" PRIMARY KEY ("id")
             )
         `);
