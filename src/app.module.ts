@@ -14,12 +14,15 @@ import { RoleModule } from './role/role.module';
     UsersModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
-      port: 2893,
-      username: 'postgres',
-      password: 'postgres',
+      host: 'ep-sweet-lake-adzrezig-pooler.c-2.us-east-1.aws.neon.tech',
+      port: 5432,
+      username: 'neondb_owner',
+      password: 'npg_gmY2XVkHj6EU',
       database: 'moometrics',
       entities: [User, Role],
+      ssl: {
+        rejectUnauthorized: false, // importante para Neon
+      },
       synchronize: false, // Usar migraciones en lugar de sincronización automática
   }),
     RoleModule],
